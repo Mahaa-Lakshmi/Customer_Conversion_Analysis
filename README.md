@@ -42,7 +42,7 @@ The session data consisted of raw browsing events (clicks, views, cart adds, etc
 * Country Encoding: Grouped countries into:
 	+ EU Countries
 	+ Non-EU Countries
-	+ Germany (as special group)
+	+ Poland (as special group)
 
 All preprocessing was done automatically during both file upload and form entry.
 
@@ -88,8 +88,7 @@ For manual entry prediction, dynamic feature transformation was needed so that t
 │   ├── best_model_classification.pkl
 │   ├── best_model_regression.pkl
 │   └── best_model_clustering.pkl
-├── streamlit_app.py
-├── utils.py (optional if separated preprocessing)
+├── app.py
 ├── README.md
 ├── requirements.txt
 ```
@@ -98,8 +97,8 @@ For manual entry prediction, dynamic feature transformation was needed so that t
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/your-username/smart-customer-session-predictor.git
-cd smart-customer-session-predictor
+git clone https://github.com/Mahaa-Lakshmi/Customer_Conversion_Analysis.git
+cd Customer_Conversion_Analysis
 ```
 
 2. **Install Dependencies**
@@ -109,7 +108,7 @@ pip install -r requirements.txt
 
 3. **Run the App**
 ```bash
-streamlit run streamlit_app.py
+streamlit run app.py
 ```
 
 4. **View in Browser**  
@@ -121,19 +120,13 @@ Navigate to `http://localhost:8501`
 
 | Session ID | Avg Price | Clicks | Color Group | Country | Day of Week | ... |
 |------------|-----------|--------|-------------|---------|-------------|-----|
-| 12345 | 49.99 | 7 | Red | Germany | Monday | ... |
+| 12345 | 49.99 | 7 | Gray | Poland | Monday | ... |
 
 ### 🖥️ App Output
 
 | Session ID | Predicted Purchase | Predicted Revenue | Cluster ID |
 |------------|--------------------|-------------------|------------|
-| 12345 | Yes | $56.40 | 2 |
+| 12345 | Yes | $56.40 | 0 |
 | 67890 | No | $0.00 | 1 |
 
-🌟 Future Work
-
-- Add explainability using SHAP values to understand predictions better.
-- Implement real-time user journey tracking.
-- Optimize the app for large CSV file uploads.
-- Deploy on a cloud platform (Streamlit Cloud, AWS).
 
