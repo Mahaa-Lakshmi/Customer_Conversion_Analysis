@@ -3,10 +3,13 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from datetime import datetime
+from scipy import stats
 
 # Load data
 train_data = pd.read_csv("E:/AI engineer/Guvi/Capstone Projects/Project4/Customer_Conversion_Analysis/data/train.csv")
-test_data = pd.read_csv("E:/AI engineer/Guvi/Capstone Projects/Project4/Customer_Conversion_Analysis/data/test.csv")
+#test_data = pd.read_csv("E:/AI engineer/Guvi/Capstone Projects/Project4/Customer_Conversion_Analysis/data/test.csv")
+
+print("dataset loaded and preprocess started")
 
 # Drop unnecessary columns
 train_data.drop(["year"], axis=1, inplace=True)
@@ -143,6 +146,7 @@ train_data['revenue'] = train_data.groupby('session_id')['price'].transform('sum
 # Drop redundant columns
 cols_to_drop = ['page1_main_category','country','country_group' ,'page2_clothing_model', 'location', 'model_photography', 'price_2', 'colour']
 train_data.drop(cols_to_drop, axis=1, inplace=True)
+
 
 # Scale numerical features
 numerical_cols = ['order', 'price', 'page', 'total_clicks', 'avg_price', 

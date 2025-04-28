@@ -6,3 +6,4 @@ scikit-learn
 xgboost 
 tensorflow 
 streamlit
+plotly_express
